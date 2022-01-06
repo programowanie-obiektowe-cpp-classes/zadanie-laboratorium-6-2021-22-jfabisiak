@@ -12,7 +12,7 @@ std::vector< char > foo(std::list< Human >& people)
 
     std::for_each(people.begin(), people.end(), [&](Human& people){people.birthday();});
    std::transform(people.rbegin(), people.rend(), ret_v.begin(), [](Human& people){
-        return people.isMonster() ? 'n' : 'y';
+        if (people.isMonster()) return 'n'; else return 'y';
         });
 
 
